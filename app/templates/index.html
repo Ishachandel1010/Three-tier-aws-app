@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three-Tier App Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 60px auto; background: #f4f6f8; }
+        h1 { color: #1f4e5f; }
+        form { margin-bottom: 20px; }
+        input[type=text] { padding: 8px; width: 70%; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 16px; background: #1f4e5f; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+        li { background: white; padding: 10px; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        small { color: #888; }
+    </style>
+</head>
+<body>
+    <h1>Three-Tier Application Demo</h1>
+    <p>Presentation (Nginx) &rarr; Application (Flask/Gunicorn) &rarr; Database (PostgreSQL)</p>
+
+    <form action="/add" method="POST">
+        <input type="text" name="content" placeholder="Write a message..." required>
+        <button type="submit">Add</button>
+    </form>
+
+    <ul>
+        {% for msg in messages %}
+        <li>
+            {{ msg[1] }}<br>
+            <small>{{ msg[2] }}</small>
+        </li>
+        {% else %}
+        <li>No messages yet. Add one above!</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
