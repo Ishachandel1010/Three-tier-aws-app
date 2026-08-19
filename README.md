@@ -2,7 +2,9 @@
 
 A simple message board app demonstrating a classic three-tier architecture — Presentation, Application, and Database — fully containerized with Docker Compose and deployed on an AWS EC2 (Ubuntu) instance inside a custom VPC.
 
- ![Three-tier aws app](sreenshot/screenshot.png)
+## Application Screenshot
+
+![Three-Tier AWS Application](screenshot/screenshot.png)
 
 ## Architecture
 
